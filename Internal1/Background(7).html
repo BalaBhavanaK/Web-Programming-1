@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Color Setter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            transition: background-color 0.5s ease; /* Smooth transition for background color change */
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Background Color Setter</h2>
+        <form id="colorForm">
+            <label>
+                <input type="radio" name="color" value="red"> Red
+            </label>
+            <label>
+                <input type="radio" name="color" value="green"> Green
+            </label>
+            <label>
+                <input type="radio" name="color" value="blue"> Blue
+            </label>
+            <br><br>
+            <button type="button" onclick="changeBackgroundColor()">Set Background Color</button>
+        </form>
+    </div>
+
+    <script>
+        function changeBackgroundColor() {
+            const selectedColor = document.querySelector('input[name="color"]:checked').value;
+            document.body.style.backgroundColor = selectedColor;
+        }
+    </script>
+</body>
+</html>

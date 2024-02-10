@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Color Picker</h2>
+        <form id="colorForm">
+            <div>
+                <label for="foreground">Foreground:</label>
+                <input type="color" id="foreground" name="foreground">
+            </div>
+            <div>
+                <label for="background">Background:</label>
+                <input type="color" id="background" name="background">
+            </div>
+            <br>
+            <button type="button" onclick="applyColors()">Apply Colors</button>
+        </form>
+    </div>
+
+    <script>
+        function applyColors() {
+            const foregroundColor = document.getElementById('foreground').value;
+            const backgroundColor = document.getElementById('background').value;
+
+            document.body.style.color = foregroundColor;
+            document.body.style.backgroundColor = backgroundColor;
+        }
+    </script>
+</body>
+</html>
